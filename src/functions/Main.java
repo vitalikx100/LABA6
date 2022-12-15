@@ -1,4 +1,4 @@
-package GI;
+package functions;
 
 import functions.InappropriateFunctionPointException;
 import GI.FXMLMainFormController;
@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Main extends Application{
@@ -24,7 +23,7 @@ public class Main extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLMainForm.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GI/FXMLMainForm.fxml"));
         Parent root = loader.load();
         FXMLMainFormController ctrl = loader.getController();
         ctrl.setStage(stage);

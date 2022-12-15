@@ -73,7 +73,7 @@ public class ArrayTabulatedFunction implements Serializable, TabulatedFunction, 
         return NumberOfPoints;
     }
     public void setNumberOfPoints(int count){
-
+        NumberOfPoints=count;
     }
 
     public FunctionPoint getPoint(int index) {

@@ -1,5 +1,6 @@
 package GI;
 
+import functions.Main;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,7 @@ public class ActionsDialogWindow {
     }
 
     public FXMLDialogWindow.BUTTON showDialog(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/gui/FXMLDialogWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/GI/FXMLDialogWindow.fxml"));
         Parent root = loader.load();
         FXMLDialogWindow ctrl = loader.getController();
         Scene scene = new Scene(root);

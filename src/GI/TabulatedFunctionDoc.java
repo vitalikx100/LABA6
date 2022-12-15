@@ -8,7 +8,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 
-public class TabulatedFunctionDoc implements TabulatedFunction{
+public class TabulatedFunctionDoc implements TabulatedFunction, Cloneable{
 
     private TabulatedFunction tabulatedObjectLink;
     private String currentFileName;
@@ -132,8 +132,12 @@ public class TabulatedFunctionDoc implements TabulatedFunction{
     }
 
 
-    public int getPointsCount(){
+    public int getNumberOfPoints(){
         return tabulatedObjectLink.getNumberOfPoints();
+    }
+
+    public void setNumberOfPoints(int count){
+
     }
 
     @Override
@@ -177,6 +181,10 @@ public class TabulatedFunctionDoc implements TabulatedFunction{
         callRedraw();
     }
 
+    public void print(){
+
+    }
+
     @Override
     public void deletePoint(int index) throws FunctionPointIndexOutOfBoundsException{
         tabulatedObjectLink.deletePoint(index);
@@ -211,12 +219,12 @@ public class TabulatedFunctionDoc implements TabulatedFunction{
     public int hashCode(){
         return tabulatedObjectLink.hashCode();
     }
-
-    public Object clone() throws CloneNotSupportedException{
+    /*
+    protected Object clone() throws CloneNotSupportedException{
         TabulatedFunction tabFunction = (TabulatedFunction) this.tabulatedObjectLink.clone();
         TabulatedFunctionDoc cloneTabulatedFunctionDoс = new TabulatedFunctionDoc(tabFunction, this.currentFileName, this.fileNameAssigned, this.modified);
         return (Object) cloneTabulatedFunctionDoс;
     }
-
+    */
 
 }

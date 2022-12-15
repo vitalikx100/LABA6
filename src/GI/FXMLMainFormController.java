@@ -2,6 +2,7 @@ package GI;
 
 import functions.FunctionPoint;
 import functions.InappropriateFunctionPointException;
+import functions.Main;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,7 +55,7 @@ public class FXMLMainFormController {
     public void redraw(){
         ObservableList<FunctionPoint> data = table.getItems();
         data.clear();
-        for(int i = 0; i < Main.tabFDoc.getPointsCount(); ++i) {
+        for(int i = 0; i < Main.tabFDoc.getNumberOfPoints(); ++i) {
             data.add(new FunctionPoint(Main.tabFDoc.getPointX(i), Main.tabFDoc.getPointY(i)));
         }
         table.setItems(data);
@@ -98,7 +99,7 @@ public class FXMLMainFormController {
     }
 
     private void updatePointCount() {
-        numberPointLabel.setText("Point " + Integer.toString(table.getSelectionModel().getSelectedIndex() + 1) + " of " + Integer.toString(Main.tabFDoc.getPointsCount()));
+        numberPointLabel.setText("Point " + Integer.toString(table.getSelectionModel().getSelectedIndex() + 1) + " of " + Integer.toString(Main.tabFDoc.getNumberOfPoints()));
     }
 
 
